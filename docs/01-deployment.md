@@ -10,3 +10,10 @@ We arent going to get anywhere with just one X wing going up against the Death S
 
 Let's externalize our Rebel Base configuration from the app itself.
 
+create deployment
+
+how to do httpproxy/serice to access
+
+try to win by blowing up death star
+
+
