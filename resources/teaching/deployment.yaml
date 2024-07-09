@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: death-star
+  labels:
+    app: death-star
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: death-star
+  template:
+    metadata:
+      labels:
+        app: death-star
+    spec:
+      containers:
+        - name: death-star
+          image: mattslater.io/star-wars:0.1.0
+          env:
+            - name: ROLE
+              valueFrom:
+                configMapKeyRef:
+                  name: death-star
+                  key: role
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: death-star
+                  key: port
+            - name: TARGET
+              valueFrom:
+                configMapKeyRef:
+                  name: death-star
+                  key: target
+            - name: COMMANDER
+              valueFrom:
+                configMapKeyRef:
+                  name: death-star
+                  key: commander

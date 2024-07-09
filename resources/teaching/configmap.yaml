@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: death-star
+data:
+  commander: "darth-vader"
+  target: "x"
+  port: "8000"
+  role: "deathstar"

@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rebel-base
+  labels:
+    app: rebel-base
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rebel-base
+  template:
+    metadata:
+      labels:
+        app: rebel-base
+    spec:
+      containers:
+        - name: rebel-base
+          image: containers-read.gkp.jpmchase.net/container-sandbox/kubecommunity/star-wars:0.1.0
+          env:
+            - name: ROLE
+              valueFrom:
+                configMapKeyRef:
+                  name: rebel-base
+                  key: role
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: rebel-base
+                  key: port
+            - name: TARGET
+              valueFrom:
+                configMapKeyRef:
+                  name: rebel-base
+                  key: target
+            - name: COMMANDER
+              valueFrom:
+                configMapKeyRef:
+                  name: rebel-base
+                  key: commander

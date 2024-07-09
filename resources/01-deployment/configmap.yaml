@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rebel-base
+data:
+  commander: "CHANGE_ME"
+  target: "CHANGE_ME"
+  port: "8000"
+  role: "rebelbase"
